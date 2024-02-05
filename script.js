@@ -1,77 +1,77 @@
-// creating and accessing object properties
+// how do you create an object in javascript?
 
-// create an object named car with properties make, model, and year.
-// Then access and log the model property.
-
-const car = {
-  make: 'Maruti',
-  model: '800',
-  year: 1998
-}
-console.log(car.model);
-
-// modifying object properties
-
-// modify the year property of the car object to 2021.
-
-car.year = 2021;
-
-// deleting a property from an object
-
-// remove the make property from the car object
-
-delete car.make;
-
-// iterating over object properties
-
-// write a loop that logs all properties and their values of the car object.
-
-for(let key in car) {
-  console.log(key + ': ' + car[key]);
-}
-
-// checking property existence
-
-// check if the car object has a property named model
-
-console.log('model' in car);
-
-// nested objects
-
-// create an object person with properties name and address,
-// where address is an object with properties street, city and zipcode.
+// Objects can be created using curly braces {}
 
 let person = {
-  name: 'Kannan',
-  address: {
-    street: 'maruthu pandiar',
-    city: 'madurai',
-    zipcode: 625022
-  }
+  name: "Alice",
+  age: 20,
+  occupation: "Developer",
+};
+
+// how do you access the properties of an object?
+
+// properties can be accessed using dot notation or bracket notation
+
+console.log(person.name);
+
+// how do you add a new property to an existing object?
+
+// add a property using dot natatin or bracket notation
+
+person.country = "India";
+person["email"] = "alice@gmail.com";
+console.log(person);
+
+// how do you delete a property from an object?
+
+// use the delete operator to remove a property
+
+delete person.occupation;
+console.log(person);
+
+// how do you check if an object contains a specific property?
+
+// use the in operator or hasOwnProperty method
+
+console.log("name" in person);
+console.log(person.hasOwnProperty("age"));
+
+// how can you iterate over the properties of an object?
+
+// use for...in loop to iterate over object properties
+
+for (let key in person) {
+  console.log(key + ": " + person[key]);
 }
 
-// copying an object
+// how do you create a copy of an object?
 
-// create a shallow copy of the person object
+// use Object.assign or spread syntax {...} to create a shallow copy
 
-let copyPerson = Object.assign(person);
+let copyOfPerson = Object.assign(person); // Object.assign({}, person)
+console.log(copyOfPerson);
 
-// merging objects
+// how do you merge two objects?
 
-// merge two objects, person and contactDetails(with properties
-// email and phone) into a new object
+// merge objects using Object.assign or spread syntax
 
-let contactDetails = {
-  email: 'dummy@gmail.com',
-  phone: 5689475698
+let additionalInfo = { gender: "female", city: "Madurai" };
+let mergedObjects = Object.assign(copyOfPerson, additionalInfo); // Object.assign({}, copyOfPerson, additionalInfo)
+let anotherMerged = {
+  ...copyOfPerson,
+  ...additionalInfo
 }
+console.log(mergedObjects, anotherMerged);
 
-let mergedObjects = Object.assign(person, contactDetails);
+// how do you find the number of properties in an object?
 
-// object keys and values
+// use object.keys() to get an array of properties and then find its length.
 
-// get all keys and values from the person object separately and log them.
+let list = Object.keys(person);
+console.log(list.length);
 
-let keys = Object.keys(person);
-let values = Object.values(person);
-console.log(keys, values);
+// how do you prevent modifications to an object?
+
+// use Object.freeze() to make an object immutable
+
+Object.freeze(person);
