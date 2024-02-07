@@ -1,54 +1,49 @@
-// basic template literal
+// how do you declare a variable in javascript and assign the string 'Hello World' to it?
 
-const name = 'Kannan';
-const greeting = `Hello ${name}.`;
-console.log(greeting);
+let message = 'Hello World';
 
-// multiline strings
+// what will be the output of the following code?
 
-const multilineString = `
-This is a multiline
-string created with
-template literals
-`;
-console.log(multilineString);
+const x = 5;
+const y = '5';
+console.log(x + y); // it will be 55
 
-// expressions in template literals
+// identify the data types of the following variables
 
-const num1 = 5;
-const num2 = 10;
-const sum = `The sum of ${num1} and ${num2} is ${num1 + num2}.`;
-console.log(sum);
+let a = true; // boolean
+let b = 1; // number
+let c = 'Hello'; // string
+let d = null; // object
+let e; // undefined
 
-// tagged template literals
+// what is the difference between using let and const for declaring variables?
+// ans: let can be reassigned but const not.
 
-function sampleTag(strings, ...values) {
-  console.log(strings);
-  console.log(values);
-  return 'Processed result';
-}
-const value1 = 10;
-const value2 = 20;
-const result = sampleTag`The sum of ${value1} and ${value2} is ${value1 + value2}.`;
-console.log(result);
+// how does javascript handle adding a number and a string together?
+// ans: js converts the number to string and concatenate with string. this is coericion.
 
-// escaping character
+// what will be the output of the following snippet?
 
-const escaped = `This is a backtick: \` inside a template literal.`;
-console.log(escaped);
+let f = '5';
+let g = 3;
+console.log(typeof(f * g)); // it will be number
 
-// conditional rendering
+// how can you convert the string '123' into a number?
 
-const isLogged = false;
-const statusMessage = `User is ${isLogged ? 'logged in' : 'logged out'}.`;
-console.log(statusMessage);
+let num = parseInt('123');
 
-// functionality with arrays and loops
+// what will be the output of the following code?
 
-const fruits = ['apple', 'banana', 'orange'];
-const fruitList = `
-<ul>
-${fruits.map(fruit => `<li>${fruit}</li>`).join('')}
-</ul>
-`;
-console.log(fruitList);
+var h;
+console.log(typeof h); // it will be 'undefined'
+
+// what will be the output of the following code and why?
+
+let i = null;
+console.log(typeof i);
+
+// can you reassign a value to a variable declared with const? what will happen if you try to do so?
+
+// ans: no. it will throw an error.
+
+
