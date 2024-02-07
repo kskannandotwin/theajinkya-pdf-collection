@@ -1,77 +1,54 @@
-// creating and accessing object properties
+// basic template literal
 
-// create an object named car with properties make, model, and year.
-// Then access and log the model property.
+const name = 'Kannan';
+const greeting = `Hello ${name}.`;
+console.log(greeting);
 
-const car = {
-  make: 'Maruti',
-  model: '800',
-  year: 1998
+// multiline strings
+
+const multilineString = `
+This is a multiline
+string created with
+template literals
+`;
+console.log(multilineString);
+
+// expressions in template literals
+
+const num1 = 5;
+const num2 = 10;
+const sum = `The sum of ${num1} and ${num2} is ${num1 + num2}.`;
+console.log(sum);
+
+// tagged template literals
+
+function sampleTag(strings, ...values) {
+  console.log(strings);
+  console.log(values);
+  return 'Processed result';
 }
-console.log(car.model);
+const value1 = 10;
+const value2 = 20;
+const result = sampleTag`The sum of ${value1} and ${value2} is ${value1 + value2}.`;
+console.log(result);
 
-// modifying object properties
+// escaping character
 
-// modify the year property of the car object to 2021.
+const escaped = `This is a backtick: \` inside a template literal.`;
+console.log(escaped);
 
-car.year = 2021;
+// conditional rendering
 
-// deleting a property from an object
+const isLogged = false;
+const statusMessage = `User is ${isLogged ? 'logged in' : 'logged out'}.`;
+console.log(statusMessage);
 
-// remove the make property from the car object
+// functionality with arrays and loops
 
-delete car.make;
-
-// iterating over object properties
-
-// write a loop that logs all properties and their values of the car object.
-
-for(let key in car) {
-  console.log(key + ': ' + car[key]);
-}
-
-// checking property existence
-
-// check if the car object has a property named model
-
-console.log('model' in car);
-
-// nested objects
-
-// create an object person with properties name and address,
-// where address is an object with properties street, city and zipcode.
-
-let person = {
-  name: 'Kannan',
-  address: {
-    street: 'maruthu pandiar',
-    city: 'madurai',
-    zipcode: 625022
-  }
-}
-
-// copying an object
-
-// create a shallow copy of the person object
-
-let copyPerson = Object.assign(person);
-
-// merging objects
-
-// merge two objects, person and contactDetails(with properties
-// email and phone) into a new object
-
-let contactDetails = {
-  email: 'dummy@gmail.com',
-  phone: 5689475698
-}
-
-let mergedObjects = Object.assign(person, contactDetails);
-
-// object keys and values
-
-// get all keys and values from the person object separately and log them.
-
-let keys = Object.keys(person);
-let values = Object.values(person);
-console.log(keys, values);
+const fruits = ['apple', 'banana', 'orange'];
+const fruitList = `
+<ul>
+${fruits.map(fruit => `<li>${fruit}</li>`).join('')}
+</ul>
+`;
+console.log(fruitList);
