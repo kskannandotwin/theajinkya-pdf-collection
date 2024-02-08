@@ -1,49 +1,65 @@
-// how do you declare a variable in javascript and assign the string 'Hello World' to it?
+// declaration and initialization
 
-let message = 'Hello World';
+var globalVar = 10; // global scope
+let localVar = 'Hello'; // block scope
+const pi = 3.14; // block-scoped constant
 
-// what will be the output of the following code?
+// variable naming rules
 
-const x = 5;
-const y = '5';
-console.log(x + y); // it will be 55
+var myVar;
+var _privateVar = 'secret';
+var $money;
 
-// identify the data types of the following variables
+// data types
 
-let a = true; // boolean
-let b = 1; // number
-let c = 'Hello'; // string
-let d = null; // object
-let e; // undefined
+var num = 42; // number
+var str = 'Hello'; // string
+var bool = true; // boolean
+var arr = [1, 2, 3]; // array
+var obj = { name: 'John', age: 30 }; // object
 
-// what is the difference between using let and const for declaring variables?
-// ans: let can be reassigned but const not.
+// assignment
 
-// how does javascript handle adding a number and a string together?
-// ans: js converts the number to string and concatenate with string. this is coericion.
+var x = 5;
+var name = 'Alice';
 
-// what will be the output of the following snippet?
+// reassignment
 
-let f = '5';
-let g = 3;
-console.log(typeof(f * g)); // it will be number
+var x = 5;
+x = 10; // reassignment is allowed
 
-// how can you convert the string '123' into a number?
+let y = 20;
+y = 30; // reassignment is allowed
 
-let num = parseInt('123');
+const z = 42;
+// z = 50; // cannot
 
-// what will be the output of the following code?
+// scope
 
-var h;
-console.log(typeof h); // it will be 'undefined'
+var globalVar = 'I am global'; // global scope
 
-// what will be the output of the following code and why?
+function myFunction() {
+    var localVar = 'I am local'; // function scope
+    console.log(localVar); // accessible here
+};
 
-let i = null;
-console.log(typeof i);
+myFunction();
+console.log(globalVar); // accessible here
 
-// can you reassign a value to a variable declared with const? what will happen if you try to do so?
+if(true) {
+    let blockVar = 'I am block scoped'; // block scope
+    console.log(blockVar); // accessible here
+}
+// console.log(blockVar); // not accessible here because of this is block scope
 
-// ans: no. it will throw an error.
+// hoisting
 
+console.log(hoistedVar); // undefined
+var hoistedVar;
+
+// destructuring
+
+const person = { firstName: 'John', lastName: 'Doe'};
+const {firstName, lastName} = person;
+console.log(firstName);
 
