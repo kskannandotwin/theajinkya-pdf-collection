@@ -1,49 +1,81 @@
-// how do you declare a variable in javascript and assign the string 'Hello World' to it?
+// Declare two variables, num1 and num2, and
+// assign them numeric values. Add these two variables and
+// store the result in a third variable named sum.
 
-let message = 'Hello World';
+let num1 = 5;
+let num2 = 10;
+const sum = num1 + num2;
+console.log(sum);
 
-// what will be the output of the following code?
+// Create a variable greeting and assign it a string
+// value. Then create another variable name and assign it a
+// string. Concatenate these two variables and print the
+// result.
 
-const x = 5;
-const y = '5';
-console.log(x + y); // it will be 55
+let greeting = 'Hello';
+let name = 'Kannan';
+console.log(greeting  + ' ' + name);
 
-// identify the data types of the following variables
+// Declare a variable isValid and assign it a boolean
+// value. Check if isValid is true, and if so, print "Valid".
+// Otherwise, print "Invalid".
 
-let a = true; // boolean
-let b = 1; // number
-let c = 'Hello'; // string
-let d = null; // object
-let e; // undefined
+let isValid = true;
+if(isValid) {
+    console.log('Valid');
+} else {
+    console.log('Invalid');
+}
 
-// what is the difference between using let and const for declaring variables?
-// ans: let can be reassigned but const not.
+// Write a JavaScript program to swap the values
+// of two variables a and b.
 
-// how does javascript handle adding a number and a string together?
-// ans: js converts the number to string and concatenate with string. this is coericion.
+let a = 10;
+let b = 20;
+[a, b] = [b, a];
+console.log(a, b);
 
-// what will be the output of the following snippet?
+// Create a variable undefinedVar without
+// assigning any value to it. Print its value and data type.
 
-let f = '5';
-let g = 3;
-console.log(typeof(f * g)); // it will be number
+let undefinedVar;
+console.log(undefinedVar);
+console.log(typeof undefinedVar);
 
-// how can you convert the string '123' into a number?
+// Declare a constant PI and assign it the value of
+// 3.14. Attempt to reassign it to a different value and
+// observe the result.
 
-let num = parseInt('123');
+const PI = 3.14;
+// PI = 314;
+// console.log(PI); // make it error
 
-// what will be the output of the following code?
+// Create a variable nullVar and explicitly set its
+// value to null. Print its type.
 
-var h;
-console.log(typeof h); // it will be 'undefined'
+let nullVar = null;
+console.log(typeof nullVar);
 
-// what will be the output of the following code and why?
+// Convert the string "123" into a number without
+// using any built-in JavaScript
 
-let i = null;
-console.log(typeof i);
+let string = '123';
+let num = +string;
+console.log(typeof num);
 
-// can you reassign a value to a variable declared with const? what will happen if you try to do so?
+// Create an array with four different data types
+// (string, number, boolean, and null), and print the array
+// and its length.
 
-// ans: no. it will throw an error.
+let arr = ['hi', 123, true, null];
+console.log(arr.length);
 
+// Declare a variable count with a number value.
+// Use the typeof operator to check its type, change the
+// value to a string, and check its type again.
 
+let count = 10;
+console.log(typeof count);
+count = count.toString();
+console.log(count);
+console.log(typeof count);
