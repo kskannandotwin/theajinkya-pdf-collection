@@ -1,6 +1,6 @@
-// Create a function addNumbers that takes two arguments, a (a string
-// representing a number) and b (a number). Convert a to a number, add it to b, and
-// return the result.
+// Declare two variables, num1 and num2, and
+// assign them numeric values. Add these two variables and
+// store the result in a third variable named sum.
 
 function addNumbers(a, b) {
     // let num = Number(a);
