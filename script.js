@@ -3,7 +3,6 @@
 function add(a, b) {
     return a + b;
 }
-
 const sum = add(10, 15);
 console.log(sum);
 
@@ -30,7 +29,6 @@ const helloWorld = function() {
 function square(num) {
     return num * num;
 }
-
 console.log(square(4));
 
 // How can you create a function in JavaScript that remembers the state of variables from its last execution?
@@ -54,6 +52,29 @@ console.log(myCounter());
 function name(name = 'Guest') {
     return 'Hello ' + name;
 }
-
 console.log(name('Kannan'));
 console.log(name());
+
+// Write a function multiply that uses the rest
+// parameter to take an arbitrary number of arguments and
+// returns their product.
+
+function multiply(...numbers) {
+    return numbers.reduce((acc, num) => acc * num, 1);
+}
+console.log(multiply(2, 3, 4, 5, 6));
+
+// Explain arrow function syntax with an example.
+
+const arrow = (a, b) => a + b;
+console.log(arrow(10, 20));
+
+// Write a function isEven that returns true if a
+// number is even and false if it is not, using the ternary
+// operator.
+
+function isEven(num) {
+    return num % 2 === 0 ? true : false;
+}
+console.log(isEven(10));
+console.log(isEven(11));
