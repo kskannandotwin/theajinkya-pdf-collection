@@ -1,80 +1,23 @@
-// Write a function named add that takes two arguments and returns their sum.
+// Create a function that receives a callback and invokes it with a message.
 
-function add(a, b) {
-    return a + b;
+function useCallback(callback) {
+    callback('Callback function invoked');
 }
-const sum = add(10, 15);
-console.log(sum);
+const displayMessage = (message) => console.log(message);
+useCallback(displayMessage);
 
-// How does a function expression differ from a function declaration?
+// Implement a higher-order function that takes a function and a number,
+// then applies the function to the number.
 
-// function declaration
-function hello() {
-    console.log("Hello");
+function applyFunction(operation, value) {
+    return operation(value);
 }
+const squareFunction = (num) => num * num;
+console.log(applyFunction(squareFunction, 4));
 
-// function expression
-const helloWorld = function() {
-    console.log('Hello World');
-};
+// Implement a recursive function to calculate the factorial of a number.
 
-// What is an Immediately Invoked Function Expression (IIFE) and provide an example?
-
-(function() {
-    console.log('Hello, this is IIFE');
-})();
-
-// Write a function square that returns the square of a number and use it to calculate the square of 4.
-
-function square(num) {
-    return num * num;
+function factorial(n) {
+    return n <= 1 ? 1 : n * factorial(n - 1);
 }
-console.log(square(4));
-
-// How can you create a function in JavaScript that remembers the state of variables from its last execution?
-// What is closure?
-
-function counter() {
-    let count = 0;
-    return function() {
-        count += 1;
-        return count;
-    }
-}
-// above the closure example
-
-const myCounter = counter();
-console.log(myCounter());
-console.log(myCounter());
-
-// What are default parameters in a function? Give an example.
-
-function name(name = 'Guest') {
-    return 'Hello ' + name;
-}
-console.log(name('Kannan'));
-console.log(name());
-
-// Write a function multiply that uses the rest
-// parameter to take an arbitrary number of arguments and
-// returns their product.
-
-function multiply(...numbers) {
-    return numbers.reduce((acc, num) => acc * num, 1);
-}
-console.log(multiply(2, 3, 4, 5, 6));
-
-// Explain arrow function syntax with an example.
-
-const arrow = (a, b) => a + b;
-console.log(arrow(10, 20));
-
-// Write a function isEven that returns true if a
-// number is even and false if it is not, using the ternary
-// operator.
-
-function isEven(num) {
-    return num % 2 === 0 ? true : false;
-}
-console.log(isEven(10));
-console.log(isEven(11));
+console.log(factorial(5));
